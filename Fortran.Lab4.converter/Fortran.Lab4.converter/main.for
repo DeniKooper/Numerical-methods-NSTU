@@ -43,7 +43,7 @@
       h=0
       DO i=1,N,1
       h=ia(i+1)-ia(i)
-      DO j=1, h+1, 1
+      DO j=1, h, 1
 
       answer(N*(i+j-1)+i)=ad(ia(i+1)-j)
       answer(N*(i-1)+i+j)=au(ia(i+1)-j)
