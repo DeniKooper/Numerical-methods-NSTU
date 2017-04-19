@@ -31,7 +31,7 @@
       a(N)=di(N)*v(N)
       DO i=1,N-1,1
       h=ia(i+1)-ia(i)
-      a(i)=di(i)*v(i)
+      a(i)=a(i)+di(i)*v(i)
       DO k=0,h-1,1
       a(i+h-k)=a(i+h-k)+v(i)*ad(ia(i)+k)
       a(i)=a(i)+v(i+h-k)*au(ia(i)+k)
