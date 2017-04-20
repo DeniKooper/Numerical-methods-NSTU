@@ -1,10 +1,13 @@
 import random
 import numpy as np
 
-ot=1
-do=9
-#print('Input index for files')
-#M=input()
+# Диапозон значений элементов в матрице
+ot=1E+15
+do=1E+25
+# Колличествознаков после запятой
+R=999
+
+
 N=int(float(open('n.txt').readline()))
 K=int(((N**2)-N)/2*random.random())
 di=list()
@@ -23,8 +26,8 @@ k=0
 for i in range(0, N-2, 1):
     if flag:
         for j in range(0,N-i-1, 2):
-            ad.append(random.uniform(ot, do))
-            au.append(random.uniform(ot, do))
+            ad.append(round(random.uniform(ot, do),R))
+            au.append(round(random.uniform(ot, do),R))
             if N-i-1-j>=2:
                 ad.append(0)
                 au.append(0)
@@ -36,8 +39,8 @@ for i in range(0, N-2, 1):
         flag = False
     else:
         for j in range(1,N-i-1, 2):
-            ad.append(random.uniform(ot, do))
-            au.append(random.uniform(ot, do))
+            ad.append(round(random.uniform(ot, do),R))
+            au.append(round(random.uniform(ot, do),R))
             if N-i-1-j>=2:
                 ad.append(0)
                 au.append(0)
@@ -51,10 +54,10 @@ for i in range(0, N-2, 1):
 ia.append(ia[len(ia)-1])
 
 for i in range(0,N,1):
-     di.append(random.uniform(ot, do))
+     di.append(round(random.uniform(ot, do),R))
 
 for i in range(0,N,1):
-    v.append(random.uniform(ot, do))
+    v.append(round(random.uniform(ot, do),R))
 
 answer = np.zeros((N,N))
 
